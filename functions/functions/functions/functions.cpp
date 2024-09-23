@@ -2,34 +2,43 @@
 #include <iostream>
 using namespace std;
 
-void v1(char* a, const char* b) {
+void v1(char* a, const char* b) { //Takes in character arrays, destination then source
 
-	while (*b != '\0') { //while b isn't null
+	while (*b != '\0') { //while b isn't the last character
 
-		*a = *b; //value of a is new value of b
-		a++; //increments character in a
-		b++; //increments character in b
+		*a = *b; //copy current character in b to a
+		a++; //moves pointer to next character
+		b++; 
 	}
 	*a = '\0'; //set value in a to null
 }
 
-/*
-a b
-b b
-c c
-0 c
-*/
+void v2(char* a, const char* b) { //Takes in character arrays, destination then source
+	while (*b != '\0') { //while b isn't the last character
+		*a++ = *b++; //copy current character in b to a and increment pointers
+	}
+	*a = '\0'; //set last value in a to null
+}
 
 int main()
 {
-	char a = 'a';
-	char b = 'b';
-	char* pa = &a;
-	char* pb = &b;
+	char a[] = "first string";
+	char b[13];
 
-	v1(pa, pb);
+	v1(b, a);
+	/*
+	char x = new char[5]; Should be char* x = new char[5];
+	char y = new char[10];
+
+	char* a = x[0]; Should be char* a = &x[0];
+
+	char* b = y[4];
+	The source string must be initialised with a null character at the end
+	*/
+
+	v2(a, b);
 	cout << a << '\n';
-	//cout << b << '\n';
+	cout << b << '\n';
 
 	return 0;
 }
