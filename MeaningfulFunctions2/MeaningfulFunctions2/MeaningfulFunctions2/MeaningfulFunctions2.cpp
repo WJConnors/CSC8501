@@ -1,5 +1,3 @@
-//This version of the project doesn't work due to external symbol errors. MeaningfulFunctions2 is the exact same but works.
-
 #include <iostream>
 #include "Calculations.h"
 
@@ -33,5 +31,3 @@ int main()
 
     return 0;
 }
-
-

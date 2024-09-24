@@ -12,7 +12,6 @@ void v1(char* destination, const char* source) { //Takes in character arrays, de
 		//cout << a << '\n';
 		//cout << &a << '\n';
 		cout << source << '\n';
-		cout << &source << '\n';
 	}
 	*destination = '\0'; //set value in a to null
 }

@@ -15,14 +15,14 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="meaningfulFunctions.cpp">
+    <ClCompile Include="MeaningfulFunctions2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Calculations.cpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Calculations.h">
       <Filter>Header Files</Filter>
     </ClInclude>
