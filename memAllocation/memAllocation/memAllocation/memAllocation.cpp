@@ -1,4 +1,5 @@
 #include <iostream>
+#include <unordered_map>
 
 using namespace std;
 
@@ -37,9 +38,29 @@ void terminate_tree(struct node* tree)
 	delete(tree);
 }
 
+void count_frequency(struct node* tree, unordered_map<int, int>& frequency_map)
+{
+	if (tree->left) { count_frequency(tree->left, frequency_map); };
+	if (tree->right) { count_frequency(tree->right, frequency_map); };
+	frequency_map[tree->value]++;
+}
+
 int most_common_integer(struct node* tree)
 {
-	
+	unordered_map<int, int> frequency_map;
+	count_frequency(tree, frequency_map);
+
+	int max_frequency = 0;
+	int most_frequent = tree->value;
+	for (pair<const int, int> entry : frequency_map)
+	{
+		if (entry.second > max_frequency)
+		{
+			max_frequency = entry.second;
+			most_frequent = entry.first;
+		}
+	}
+	return most_frequent;
 }
 
 int largest_integer(struct node* tree)
@@ -65,14 +86,17 @@ int main() {
 	insert_integer(&tree, 3);
 	insert_integer(&tree, 6);
 	insert_integer(&tree, 5);
+	insert_integer(&tree, 3);
 	insert_integer(&tree, 9);
 	insert_integer(&tree, 4);
 	insert_integer(&tree, 5);
+	insert_integer(&tree, 3);
 	insert_integer(&tree, 1);
 	insert_integer(&tree, 3);
 	print_tree(tree);
 	cout << "largest integer: " << largest_integer(tree) << endl;
 	cout << "summ of all integers: " << summ_of_all_integers(tree) << endl;
+	cout << "most frequent integer: " << most_common_integer(tree) << endl;
 	terminate_tree(tree);
 
 	return 0;
