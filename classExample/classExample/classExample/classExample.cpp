@@ -1,22 +1,23 @@
 #include <iostream>
 #include "Enemy.h"
+#include "ArmedEnemy.h"
 
 using namespace std;
 
+void some_function(Enemy& enemy) { enemy.set_score(6); }
+
 int main()
 {
-    Enemy ei(2);
-    cout << "hp = " << ei.get_hp() << endl;
+    ArmedEnemy* ae = new ArmedEnemy(2, 5);
+    ae->set_hp(3);
+    cout << "hp = " << ae->get_hp() << endl;
 
-    Enemy* e2 = new Enemy(2);
-    e2->set_hp(3);
-    cout << "hp = " << e2->get_hp() << endl;
+    ae->shoot();
 
-    e2->set_score(2);
-    cout << "score = " << e2->get_score() << endl;
+    some_function(*ae);
 
-    delete e2;
-    e2 = nullptr;
+    delete ae;
+    ae = nullptr;
     
     return 0;
 }
