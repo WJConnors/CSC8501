@@ -17,9 +17,9 @@ Board::Board(int turn_amount) : ships { Ship(3), Ship(2) }, turns(turn_amount)
 
 bool Board::game_loop()
 {
-	while (turns > 0)
+	for (int i = turns; i > 0; i--)
 	{
-		cout << "you have " << turns << " more turn(s)" << endl;
+		cout << "you have " << i << " more turn(s)" << endl;
 
 		display_board();
 
@@ -46,8 +46,6 @@ bool Board::game_loop()
 			if (ship.get_hp()) won = false;
 		}
 		if (won) return true;
-
-		turns--;
 	}
 	return false;
 }

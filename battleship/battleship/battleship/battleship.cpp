@@ -6,11 +6,7 @@ using namespace std;
 int main()
 {
     Board board = Board(10);
-    if (board.game_loop())
-    {
-        cout << "You won!" << endl;
-    }
-    else {
+    board.game_loop() ?
+        cout << "You won!" << endl :
         cout << "You lost..." << endl;
-    }
 }
