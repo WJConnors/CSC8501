@@ -3,7 +3,11 @@
 class Enemy
 {
 public:
+	static const int default_hp = 4;
+	Enemy();
 	Enemy(int hp);
+	Enemy(const Enemy& src);
+	Enemy& operator=(const Enemy& rhs);
 	~Enemy();
 	virtual int get_hp() const;
 	virtual int get_score() const;
