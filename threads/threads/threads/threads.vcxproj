@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4d20d395-b64b-450c-b97a-d32aef1b3951}</ProjectGuid>
-    <RootNamespace>operatorOverloading</RootNamespace>
+    <ProjectGuid>{0a74a349-302e-4e11-8f47-8fb437687f75}</ProjectGuid>
+    <RootNamespace>threads</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="operatorOverloading.cpp" />
+    <ClCompile Include="threads.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
